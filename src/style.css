@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  /*"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;*/
+}
+
+.weather-card-border {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #000000;
+}
+
+h1 {
+  color: #40391f;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color: #40391f;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  margin: 0;
+  padding: 0;
+}
