@@ -3,13 +3,6 @@ body {
   /*"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
-.weather-card-border {
-  max-width: 700px;
-  margin: 50px auto;
-  padding: 30px;
-  border: 1px solid #000000;
-}
-
 h1 {
   color: #40391f;
   font-size: 24px;
@@ -29,4 +22,37 @@ li {
   line-height: 19px;
   margin: 0;
   padding: 0;
+}
+
+.card-wrapper {
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.weather-card-border {
+  padding: 30px;
+  border: 1px solid #000000;
+}
+
+.city-time-desc-overview {
+  margin-bottom: 30px;
+}
+
+.weather-time-phase-temp img {
+  margin-right: 14px;
+  width: 40px;
+  height: 40px;
+}
+
+.weather-time-phase-temp strong {
+  color: #40391f;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.weather-time-phase-temp .unit {
+  position: relative;
+  font-size: 12px;
+  top: -15px;
 }
