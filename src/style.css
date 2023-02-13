@@ -40,20 +40,20 @@ li {
 }
 
 .weather-time-phase-temp img {
-  margin-right: 14px;
-  width: 40px;
-  height: 40px;
+  margin-right: 1px;
+  width: 60px;
+  height: 60px;
 }
 
 .weather-time-phase-temp strong {
   color: #40391f;
   font-size: 60px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 60px;
 }
 
 .weather-time-phase-temp .unit {
   position: relative;
   font-size: 12px;
-  top: -15px;
+  top: -4px;
 }
