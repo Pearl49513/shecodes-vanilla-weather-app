@@ -11,6 +11,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
 
     <title>Shecodes Weather App</title>
@@ -24,11 +25,11 @@
           <!--Contains the City, Date, Time, And Weather-->
           <div class="city-time-desc-overview">
             <!--Contains the City, Date, Time, and Weather Description-->
-            <h1>City Name</h1>
+            <h1 id="city">City Name</h1>
             <ul>
               <li>Weekdate</li>
               <li>Time</li>
-              <li>Weather Description</li>
+              <li id="description">Weather Description</li>
             </ul>
           </div>
           <div class="row">
@@ -36,19 +37,20 @@
             <div class="col-6">
               <!--Column for icon, temp, and unit-->
               <div class="d-flex weather-time-phase-temp">
-                <img
+                <!--Weather Image--><img
                   src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                   alt="Weather Description"
                 />
-                <strong>0</strong><span class="unit">℃|<a href="#">℉</a></span>
+                <!--Temperature--><strong id="temperature">0</strong>
+                <!--Units--><span class="unit">℃|<a href="#">℉</a></span>
               </div>
             </div>
             <div class="col-6">
               <!--Column for Precipitation, Humidity, and Wind -->
               <ul>
-                <li>Precipitation: 0%</li>
-                <li>Humidity: 0%</li>
-                <li>Wind: 0%</li>
+                <li>Precipitation: <span id="precipitation">0</span>%</li>
+                <li>Humidity: <span id="humidity">0</span>%</li>
+                <li>Wind: <span id="wind">0</span>%</li>
               </ul>
             </div>
           </div>
