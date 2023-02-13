@@ -17,36 +17,52 @@
   </head>
   <body>
     <div class="container">
+      <!--Contains the whole webpage to activate bootstrap-->
       <div class="card-wrapper">
-      <div class="weather-card-border">
-      <div class="city-time-desc-overview">
-      <h1>City Name</h1>
-      </ul><li>Weekdate</li>
-        <li>Time</li>
-        <li>Weather Description</li>
-      </ul>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <div class="d-flex weather-time-phase-temp">
-          <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Weather Description" />
-          <strong>0</strong><span class="unit">℃|<a href="#">℉</a></span>
+        <!--Wraps the whole content in one and its centered in the page-->
+        <div class="weather-card-border">
+          <!--Contains the City, Date, Time, And Weather-->
+          <div class="city-time-desc-overview">
+            <!--Contains the City, Date, Time, and Weather Description-->
+            <h1>City Name</h1>
+            <ul>
+              <li>Weekdate</li>
+              <li>Time</li>
+              <li>Weather Description</li>
+            </ul>
+          </div>
+          <div class="row">
+            <!--Contain two rows-->
+            <div class="col-6">
+              <!--Column for icon, temp, and unit-->
+              <div class="d-flex weather-time-phase-temp">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Weather Description"
+                />
+                <strong>0</strong><span class="unit">℃|<a href="#">℉</a></span>
+              </div>
+            </div>
+            <div class="col-6">
+              <!--Column for Precipitation, Humidity, and Wind -->
+              <ul>
+                <li>Precipitation: 0%</li>
+                <li>Humidity: 0%</li>
+                <li>Wind: 0%</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        </div>
-        <div class="col-6">
-          <ul>
-            <li>Precipitation: 0%</li>
-            <li>Humidity: 0%</li>
-            <li>Wind: 0%</li>
-          </ul>
-        </div>
-        
+        <!--Creator Name-->
+        <small
+          ><a
+            href="https://github.com/Pearl49513/shecodes-vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Dahlia Casey</small
+        >
       </div>
-      
-      </div>
-      <small><a href="https://github.com/Pearl49513/shecodes-vanilla-weather-app" target="_blank">Open-source code</a> by Dahlia Casey</a></small>
-      </div>
-    
     </div>
 
     <script src="src/app.js"></script>
