@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>-->
     <link rel="stylesheet" href="src/style.css" />
 
     <title>Shecodes Weather App</title>
@@ -22,6 +23,30 @@
       <div class="card-wrapper">
         <!--Wraps the whole content in one and its centered in the page-->
         <div class="weather-card-border">
+          <!--Search Engine-->
+          <form id="search-form" class="mb-3">
+            <!--Form Set in a Row with Two Columns-->
+            <div class="row">
+              <!--Form Box-->
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter City..."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <!--Search Button-->
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-60"
+                />
+              </div>
+            </div>
+          </form>
           <!--Contains the City, Date, Time, And Weather-->
           <div class="city-time-desc-overview">
             <!--Contains the City, Date, Time, and Weather Description-->
