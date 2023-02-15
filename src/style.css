@@ -1,3 +1,76 @@
-h1 {
-  color: blue;
+body {
+  font-family: Arial, sans-serif;
+  /*"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;*/
 }
+
+h1 {
+  color: #40391f;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color: #40391f;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.card-wrapper {
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.weather-card-border {
+  padding: 30px;
+  border: 1px solid #000000;
+}
+
+.city-time-desc-overview {
+  margin-bottom: 30px;
+}
+
+.weather-time-phase-temp img {
+  margin-right: 1px;
+  width: 60px;
+  height: 60px;
+}
+
+.weather-time-phase-temp strong {
+  color: #40391f;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+.weather-time-phase-temp .unit {
+  position: relative;
+  font-size: 12px;
+  top: -4px;
+}
+
+a#fahr-link,
+a#cels-link {
+  text-decoration: none;
+}
+
+.weather-time-phase-temp .active {
+  color: #40391f;
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather-time-phase-temp .active:hover {
+  text-decoration: none;
+}
+
+/*test*/
