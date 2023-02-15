@@ -57,3 +57,18 @@ li {
   font-size: 12px;
   top: -4px;
 }
+
+a#fahr-link,
+a#cels-link {
+  text-decoration: none;
+}
+
+.weather-time-phase-temp .active {
+  color: #40391f;
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather-time-phase-temp .active:hover {
+  text-decoration: none;
+}
