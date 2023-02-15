@@ -102,3 +102,5 @@ celsLink.addEventListener("click", displayCelsTemp);
 let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", submitCityEvent);
 searchCity("New York");
+
+//test
