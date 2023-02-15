@@ -17,8 +17,86 @@
   </head>
   <body>
     <div class="container">
+      <<<<<<< Updated upstream
       <h1>Hello World</h1>
       <a href="" class="btn btn-primary">CLick me</a>
+      =======
+      <!--Contains the whole webpage to activate bootstrap-->
+      <div class="card-wrapper">
+        <!--Wraps the whole content in one and its centered in the page-->
+        <div class="weather-card-border">
+          <!--Search Engine-->
+          <form id="search-form" class="mb-3">
+            <!--Form Set in a Row with Two Columns-->
+            <div class="row">
+              <!--Form Box-->
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter City..."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <!--Search Button-->
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-60"
+                />
+              </div>
+            </div>
+          </form>
+          <!--Contains the City, Date, Time, And Weather-->
+          <div class="city-time-desc-overview">
+            <!--Contains the City, Date, Time, and Weather Description-->
+            <h1 id="city">City Name</h1>
+            <ul>
+              <!--<li id="date">Weekdate</li>-->
+              <li id="date">Time</li>
+              <li id="description">Weather Description</li>
+            </ul>
+          </div>
+          <div class="row">
+            <!--Contain two rows-->
+            <div class="col-6">
+              <!--Column for icon, temp, and unit-->
+              <div class="d-flex weather-time-phase-temp">
+                <!--Weather Image--><img
+                  src=""
+                  alt="Weather Description"
+                  id="weather-icon"
+                />
+                <!--Temperature--><strong id="temperature">0</strong>
+                <!--Units--><span class="unit"
+                  ><a href="#" id="cels-link" class="active">℃</a> |
+                  <a href="#" id="fahr-link">℉</a></span
+                >
+              </div>
+            </div>
+            <div class="col-6">
+              <!--Column for Precipitation, Humidity, and Wind -->
+              <ul>
+                <!--<li>Precipitation: <span id="precipitation">0</span>%</li>-->
+                <li>Humidity: <span id="humidity">0</span>%</li>
+                <li>Wind: <span id="wind">0</span>%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--Creator Name-->
+        <small
+          ><a
+            href="https://github.com/Pearl49513/shecodes-vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Dahlia Casey</small
+        >
+      </div>
+      >>>>>>> Stashed changes
     </div>
 
     <script src="src/app.js"></script>
