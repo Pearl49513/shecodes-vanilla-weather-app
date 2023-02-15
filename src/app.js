@@ -34,7 +34,7 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let precipitationElement = document.querySelector("#precipitation");
+  //let precipitationElement = document.querySelector("#precipitation");
   let dateElement = document.querySelector("#date");
   let weatherIconElement = document.querySelector("#weather-icon");
 
