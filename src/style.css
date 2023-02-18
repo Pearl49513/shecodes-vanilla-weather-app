@@ -1,3 +1,5 @@
+/*Weather Search*/
+
 body {
   font-family: Arial, sans-serif;
   /*"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;*/
@@ -73,4 +75,21 @@ a#cels-link {
   text-decoration: none;
 }
 
-/*test*/
+/*Weather Forecast*/
+.weather-forcast-border {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 24px;
+  color: #40391f;
+  opacity: 0.5;
+}
+.weather-forcast-temps {
+  font-size: 48px;
+}
+
+.weather-forecast-temp-min {
+  opacity: 0.5;
+}
