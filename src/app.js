@@ -1,5 +1,4 @@
-//Weather Search
-
+//Weather Search Function===========================================================================================
 //Display time
 function formatDate(timestamp) {
   //calculate the date
@@ -91,6 +90,37 @@ function displayCelsTemp(event) {
   celsLink.classList.add("active");
 }
 
+//Weather Forecast Function====================================================
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast-columns");
+
+  let forecastHTML = `<div class="row" style="border: solid">`;
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `    
+              <!--Column for future date, icon, maximum temperature, and minimum temperature-->
+              <div class="col-2" style="border: solid">
+                <div class="weather-forecast-date">${day}</div>
+                <img
+                  src="http://openweathermap.org/img/wn/01d@2x.png"
+                  alt=""
+                  width="60"
+                />
+                <div class="weather-forecast-temp">
+                  <span class="weather-forecast-temp-max">0° </span>
+                  <span class="weather-forecast-temp-min">0°</span>
+                </div>
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//Weather Search===================================================================================================
 //Unit Switch Fahrenheit
 let celsTemp = null;
 let fahrLink = document.querySelector("#fahr-link");
@@ -105,4 +135,5 @@ let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", submitCityEvent);
 searchCity("New York");
 
-//Weather Forecast
+//Weather Forecast================================================================================================
+displayForecast();
