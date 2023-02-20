@@ -51,6 +51,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherIconElement.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 }
 
 //Detects input value of search engine
@@ -90,8 +92,9 @@ function displayCelsTemp(event) {
   celsLink.classList.add("active");
 }
 
-//Weather Forecast Function====================================================
-function displayForecast() {
+//Weather Forecast Function================================================================================================================
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast-columns");
 
   let forecastHTML = `<div class="row" style="border: solid">`;
@@ -120,6 +123,14 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let weatherApiKey = "88724523008dc9e1be18f6eb6a959b67";
+  let apiForecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${weatherApiKey}&units=metric`;
+  console.log(apiForecastUrl);
+  axios.get(apiForecastUrl).then(displayForecast);
+}
+
 //Weather Search===================================================================================================
 //Unit Switch Fahrenheit
 let celsTemp = null;
@@ -136,4 +147,3 @@ citySearch.addEventListener("submit", submitCityEvent);
 searchCity("New York");
 
 //Weather Forecast================================================================================================
-displayForecast();
