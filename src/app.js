@@ -59,7 +59,8 @@ function displayTemperature(response) {
 function searchCity(city) {
   //Weather API Key and URL
   let weatherApiKey = "88724523008dc9e1be18f6eb6a959b67";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}&units=metric`;
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -74,33 +75,56 @@ function submitCityEvent(event) {
 //Activates Fahrenheit Temperature
 function displayFahrTemp(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let fahrTemp = (celsTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrTemp);
   //Remove activation of celsius
   celsLink.classList.remove("active");
   fahrLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrTemp = (celsTemp * 9) / 5 + 32;
+
+  //Testing something
+  if (units === "metric") {
+    units = "imperial";
+  }
+  allUnits.forEach(function (tempHtml) {
+    let temp = parseInt(tempHtml.innerHTML);
+    let tempH = Math.round((temp * 9) / (5 + 32));
+    tempHtml.innerHTML = tempH;
+  });
+  //Test ended
+  temperatureElement.innerHTML = Math.round(fahrTemp);
 }
 
 //Activates Celsius Temperature
 function displayCelsTemp(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsTemp);
   //Remove activation of fahrenheit
   fahrLink.classList.remove("active");
   celsLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsTemp);
+  //Testing something
+  if (units === "imperial") {
+    units = "metric";
+  }
+  allUnits.forEach(function (tempHtml) {
+    let temp = parseInt(tempHtml.innerHTML);
+    let tempC = Math.round((temp - 32) / (9 / 5));
+    tempHtml.innerHTML = tempC;
+  });
+  //Test ended
 }
 
 //Weather Forecast Function================================================================================================================
 function displayForecast(response) {
+  console.log(response.data);
   let dailyForecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-columns");
-
   let forecastHTML = `<div class="row" style="border: solid">`;
 
   dailyForecast.forEach(function (forecastDay, index) {
     if (index < 6) {
+      let maxi = Math.round(forecastDay.temp.max);
+      let mini = Math.round(forecastDay.temp.min);
       forecastHTML =
         forecastHTML +
         `    
@@ -117,27 +141,22 @@ function displayForecast(response) {
                   width="60"
                 />
                 <div class="weather-forecast-temp">
-                  <span class="weather-forecast-temp-max">${Math.round(
-                    forecastDay.temp.max
-                  )}° </span>
-                  <span class="weather-forecast-temp-min">${Math.round(
-                    forecastDay.temp.min
-                  )}°</span>
+                  <span class="weather-forecast-temp">${maxi}° </span>
+                  <span class="weather-forecast-temp">${mini}°</span>
                 </div>
               </div>`;
     }
   });
-
   forecastHTML = forecastHTML + `</div>`;
-
   forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
+  //console.log(coordinates);
   let weatherApiKey = "88724523008dc9e1be18f6eb6a959b67";
-  let apiForecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${weatherApiKey}&units=metric`;
-  console.log(apiForecastUrl);
+  let units = "metric";
+  let apiForecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${weatherApiKey}&units=${units}`;
+  //console.log(apiForecastUrl);
   axios.get(apiForecastUrl).then(displayForecast);
 }
 
@@ -157,6 +176,8 @@ fahrLink.addEventListener("click", displayFahrTemp);
 //Unit Switch Celsius
 let celsLink = document.querySelector("#cels-link");
 celsLink.addEventListener("click", displayCelsTemp);
+
+let allUnits = document.querySelectorAll(".weather-forecast-temp");
 
 //Search City Event
 let citySearch = document.querySelector("#search-form");
