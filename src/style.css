@@ -37,6 +37,17 @@ li {
   border: 1px solid #000000;
 }
 
+.search-button {
+  padding: 0px;
+  width: 70px;
+}
+.btn-secondary {
+  background-color: red;
+}
+.btn-primary {
+  background-color: red;
+}
+
 .city-time-desc-overview {
   margin-bottom: 30px;
 }

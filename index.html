@@ -28,7 +28,7 @@
             <!--Form Set in a Row with Two Columns-->
             <div class="row">
               <!--Form Box-->
-              <div class="col-9">
+              <div class="col-8">
                 <input
                   type="search"
                   placeholder="Enter City..."
@@ -38,11 +38,15 @@
                 />
               </div>
               <!--Search Button-->
-              <div class="col-3">
+              <div class="col-2 search-button">
+                <input type="submit" value="Search" class="btn btn-primary" />
+              </div>
+              <!--Current Location Button-->
+              <div class="col-2 current-button">
                 <input
                   type="submit"
-                  value="Search"
-                  class="btn btn-primary w-60"
+                  value="Current Location"
+                  class="btn btn-secondary"
                 />
               </div>
             </div>
@@ -79,7 +83,16 @@
               <ul>
                 <!--<li>Precipitation: <span id="precipitation">0</span>%</li>-->
                 <li>Humidity: <span id="humidity">0</span>%</li>
-                <li>Wind: <span id="wind">0</span><span style="text-transform:lowercase" id="wind-unit" class="wind-unit"> km/h</style></li>
+                <li>
+                  Wind: <span id="wind">0</span
+                  ><span
+                    style="text-transform: lowercase"
+                    id="wind-unit"
+                    class="wind-unit"
+                  >
+                    km/h</span
+                  >
+                </li>
               </ul>
             </div>
           </div>
