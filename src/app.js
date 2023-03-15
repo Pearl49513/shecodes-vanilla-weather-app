@@ -79,7 +79,12 @@ function displayFahrTemp(event) {
   //Remove activation of celsius
   celsLink.classList.remove("active");
   fahrLink.classList.add("active");
-  document.getElementById("wind-unit").hidden = true;
+  //document.getElementById("wind-unit").hidden = true;
+  let windUnit = document.getElementById("wind-unit").innerHTML;
+  document.getElementById("wind-unit").innerHTML = windUnit.replace(
+    " km/h",
+    " mph"
+  );
 
   //newWindUnit.textContent = "mph";
 
@@ -98,10 +103,12 @@ function displayCelsTemp(event) {
   //Remove activation of fahrenheit
   fahrLink.classList.remove("active");
   celsLink.classList.add("active");
-  document.getElementById("wind-unit").hidden = false;
-  //var windUnit = document.getElementById("wind-unit");
-  //var newWindUnit = document.createTextNode("km/h");
-  //windUnit.replaceChild(newWindUnit);
+  //document.getElementById("wind-unit").hidden = false;
+  let windUnit = document.getElementById("wind-unit").innerHTML;
+  document.getElementById("wind-unit").innerHTML = windUnit.replace(
+    " mph",
+    " km/h"
+  );
   //let temperatureElement = document.querySelector("#temperature");
   //temperatureElement.innerHTML = Math.round(celsTemp);
   units = "metric";
