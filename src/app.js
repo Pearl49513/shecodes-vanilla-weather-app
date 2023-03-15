@@ -39,6 +39,7 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let weatherIconElement = document.querySelector("#weather-icon");
 
+  coords = response.data.coord;
   celsTemp = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
@@ -53,7 +54,6 @@ function displayTemperature(response) {
   weatherIconElement.setAttribute("alt", response.data.weather[0].main);
 
   getForecast(response.data.coord);
-  coords = response.data.coord;
 }
 
 //Detects input value of search engine
@@ -118,6 +118,7 @@ function displayCelsTemp(event) {
 }
 
 //Weather Forecast Function================================================================================================================
+//Displays the Six Day Forecast
 function displayForecast(response) {
   //console.log(response.data);
   let dailyForecast = response.data.daily;
@@ -154,6 +155,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+//Gets the Six Week Forecast
 function getForecast(coordinates) {
   //console.log(coordinates);
   let weatherApiKey = "88724523008dc9e1be18f6eb6a959b67";
@@ -163,6 +165,7 @@ function getForecast(coordinates) {
   axios.get(apiForecastUrl).then(displayForecast);
 }
 
+//Day format for Forecast
 function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let date = new Date(timestamp * 1000);
@@ -170,11 +173,24 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+//Current Location Function===========================================================================================
+
+function detectLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(positionLocated);
+}
+
+function positionLocated(coordinates) {
+  let weatherApiKey = "88724523008dc9e1be18f6eb6a959b67";
+  let apiCurrentUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.coords.latitude}&lon=${coordinates.coords.longitude}&appid=${weatherApiKey}&units=${units}`;
+  axios.get(apiCurrentUrl).then(displayTemperature);
+  console.log(coordinates);
+}
+
 //Weather Search===================================================================================================
 //Unit Switch
 let units = "metric";
 let coords = null;
-//let celsTemp = null;
 
 //Fahrenheit
 let fahrLink = document.querySelector("#fahr-link");
@@ -189,4 +205,10 @@ let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", submitCityEvent);
 searchCity("New York");
 
+//Activate Current Location
+
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", detectLocation);
+
 //Weather Forecast================================================================================================
+//let celsTemp = null;
