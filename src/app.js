@@ -40,7 +40,7 @@ function displayTemperature(response) {
   let weatherIconElement = document.querySelector("#weather-icon");
 
   coords = response.data.coord;
-  celsTemp = response.data.main.temp;
+  //celsTemp = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].main;
@@ -54,6 +54,7 @@ function displayTemperature(response) {
   weatherIconElement.setAttribute("alt", response.data.weather[0].main);
 
   getForecast(response.data.coord);
+  console.log(response);
 }
 
 //Detects input value of search engine
@@ -180,11 +181,11 @@ function detectLocation(event) {
   navigator.geolocation.getCurrentPosition(positionLocated);
 }
 
-function positionLocated(coordinates) {
+function positionLocated(position) {
   let weatherApiKey = "88724523008dc9e1be18f6eb6a959b67";
-  let apiCurrentUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.coords.latitude}&lon=${coordinates.coords.longitude}&appid=${weatherApiKey}&units=${units}`;
+  let apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${weatherApiKey}`;
   axios.get(apiCurrentUrl).then(displayTemperature);
-  console.log(coordinates);
+  console.log(displayTemperature);
 }
 
 //Weather Search===================================================================================================
