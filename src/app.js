@@ -183,7 +183,7 @@ function detectLocation(event) {
 
 function positionLocated(position) {
   let weatherApiKey = "88724523008dc9e1be18f6eb6a959b67";
-  let apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${weatherApiKey}`;
+  let apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${weatherApiKey}&units=${units}`;
   axios.get(apiCurrentUrl).then(displayTemperature);
   console.log(displayTemperature);
 }
