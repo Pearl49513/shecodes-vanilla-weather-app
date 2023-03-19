@@ -64,14 +64,14 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   timeElement.innerHTML = `  ${formatTime(response.data.dt * 1000)}`;
-  weatherIconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+
+  //Changing Icons
+  let newIcon = response.data.weather[0].icon;
+  weatherIconElement.setAttribute("src", `src/images/${newIcon}.svg`);
   weatherIconElement.setAttribute("alt", response.data.weather[0].main);
 
   getForecast(response.data.coord);
-  console.log(response.data.dt);
+  //console.log(response.data.dt);
 }
 
 //Detects input value of search engine
@@ -143,10 +143,17 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast-columns");
   let forecastHTML = `<div class="row" style="border: solid">`;
 
+  /*let iconHTML = `<img
+                  src="http://openweathermap.org/img/wn/${newIcon}@2x.png"
+                  alt=""
+                  width="60"
+                />`;*/
+
   dailyForecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       let maxi = Math.round(forecastDay.temp.max);
       let mini = Math.round(forecastDay.temp.min);
+      let newIcon = forecastDay.weather[0].icon;
       forecastHTML =
         forecastHTML +
         `    
@@ -156,11 +163,9 @@ function displayForecast(response) {
                   forecastDay.dt
                 )}</div>
                 <img
-                  src="http://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                  src="src/images/${newIcon}.svg"
                   alt=""
-                  width="60"
+                  width="20"
                 />
                 <div class="weather-forecast-temp">
                   <span class="weather-forecast-temp">${maxi}°</span>
