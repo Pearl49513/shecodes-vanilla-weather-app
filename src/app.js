@@ -1,18 +1,9 @@
 //Weather Search Function===========================================================================================
-//Display time
+//Display Time and Date
 function formatDate(timestamp) {
-  //calculate the date
+  //calculate the day
   let date = new Date(timestamp);
-  //Format hours
-  let hour = date.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  //Format mintues
-  let minute = date.getMinutes();
-  if (minute < 10) {
-    minute = `0${minute}`;
-  }
+
   //Format Weekdays
   let days = [
     "Sunday",
@@ -24,8 +15,32 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  //Return Date
-  return `${day} ${hour}:${minute}`;
+
+  //Return Day
+  return `${day}`;
+}
+
+function formatTime(timestamp) {
+  //Calculcate the time
+  let time = new Date(timestamp);
+
+  //Format hours
+  let hour = time.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  //Format mintues
+  let minute = time.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+
+  //Meridiem
+  let meridiem = hour >= 12 ? "PM" : "AM";
+  hour = hour % 12;
+  hour = hour ? hour : 12;
+
+  return `${hour}:${minute} ${meridiem}`;
 }
 
 // Display Temperature, City, Weather Description, Humidity, Wind
@@ -37,6 +52,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   //let precipitationElement = document.querySelector("#precipitation");
   let dateElement = document.querySelector("#date");
+  let timeElement = document.querySelector("#time");
   let weatherIconElement = document.querySelector("#weather-icon");
 
   coords = response.data.coord;
@@ -47,6 +63,7 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  timeElement.innerHTML = `  ${formatTime(response.data.dt * 1000)}`;
   weatherIconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -54,7 +71,7 @@ function displayTemperature(response) {
   weatherIconElement.setAttribute("alt", response.data.weather[0].main);
 
   getForecast(response.data.coord);
-  console.log(response);
+  console.log(response.data.dt);
 }
 
 //Detects input value of search engine
