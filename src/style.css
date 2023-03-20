@@ -1,12 +1,14 @@
 /*Weather Search*/
 
 body {
-  font-family: Arial, sans-serif;
+  /*font-family: Arial, sans-serif;*/
   /*"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;*/
+  font-family: aktiv-grotesk, sans-serif;
+  background-color: #f9c5c55a;
 }
 
 h1 {
-  color: #40391f;
+  color: #e20000;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -26,6 +28,9 @@ li {
   padding: 0;
   text-transform: capitalize;
 }
+small {
+  color: red;
+}
 
 .card-wrapper {
   max-width: 700px;
@@ -34,32 +39,81 @@ li {
 
 .weather-card-border {
   padding: 30px;
-  border: 1px solid #000000;
+  border: 2px solid #ff0000;
+  border-radius: 0.375rem;
+}
+
+form {
+  border: 2px solid #939aa9;
+  border-radius: 0.375rem;
+  padding: 5px 0px 5px 0px;
+  width: 430px;
+  height: 52px;
+}
+
+.form-control {
+  border-style: none;
+  background-color: #939aa960;
+}
+
+.form-control::placeholder {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 .search-button {
   padding: 0px;
-  width: 70px;
 }
-.btn-secondary {
-  background-color: red;
+.current-button {
+  padding: 0px;
 }
+
 .btn-primary {
-  background-color: red;
+  background-color: #f9cccc;
+  font-weight: bold;
+  margin-left: 40px;
+  border-color: #e20000;
+  border-radius: 1em 2em 1em 1em / 2em 1em 1em 2em;
+}
+
+.btn-secondary {
+  background-color: #939aa9;
+  font-weight: bold;
+  margin-left: 90px;
+  border-color: #e20000;
+  border-radius: 1em 2em 1em 1em / 2em 1em 1em 2em;
+  height: 50px;
 }
 
 .city-time-desc-overview {
   margin-bottom: 30px;
 }
 
+#date,
+#time {
+  color: #939aa9;
+  font-weight: bold;
+}
+
+#description {
+  color: #e20000;
+}
+.measure {
+  color: #e20000;
+}
+
 .weather-time-phase-temp img {
   margin-right: 1px;
   width: 60px;
   height: 60px;
+  filter: invert(15%) sepia(97%) saturate(6984%) hue-rotate(3deg)
+    brightness(85%) contrast(115%);
 }
 
 .weather-time-phase-temp strong {
-  color: #40391f;
+  color: #939aa9;
   font-size: 60px;
   font-weight: 400;
   line-height: 60px;
@@ -77,7 +131,8 @@ a#cels-link {
 }
 
 .weather-time-phase-temp .active {
-  color: #40391f;
+  color: #e20000;
+  font-weight: bold;
   cursor: default;
   text-decoration: none;
 }
@@ -90,17 +145,28 @@ a#cels-link {
 .weather-forecast-border {
   margin-top: 20px;
   text-align: center;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
-
+.forecastDay {
+  border: 10px dotted #f9cccc;
+  background-color: #fef5f5;
+  transform: rotate(-25deg);
+}
 .weather-forecast-date {
-  font-size: 24px;
-  color: #40391f;
+  font-size: 16px;
+  color: #939aa9;
   opacity: 0.5;
 }
-.weather-forcast-temps {
-  font-size: 48px;
+.weather-forecast-temp {
+  font-size: 12px;
 }
 
 .weather-forecast-temp-min {
   opacity: 0.5;
+}
+
+.forecast-IconColor {
+  filter: invert(70%) sepia(10%) saturate(378%) hue-rotate(183deg)
+    brightness(86%) contrast(92%);
 }

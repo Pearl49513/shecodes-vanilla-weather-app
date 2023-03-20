@@ -43,7 +43,7 @@
               </div>
               <!--Search Button-->
               <div class="col-2 search-button">
-                <input type="submit" value="Search" class="btn btn-primary" />
+                <input type="submit" value="SEARCH" class="btn btn-primary" />
               </div>
               <!--Current Location Button-->
               <div class="col-2 current-button">
@@ -51,7 +51,7 @@
                   type="button"
                   id="current-location"
                   class="btn btn-secondary"
-                  value="Current Location"
+                  value="CURRENT LOCATION"
                 />
               </div>
             </div>
@@ -87,8 +87,8 @@
               <!--Column for Precipitation, Humidity, and Wind -->
               <ul>
                 <!--<li>Precipitation: <span id="precipitation">0</span>%</li>-->
-                <li>Humidity: <span id="humidity">0</span>%</li>
-                <li>
+                <li class="measure">Humidity: <span id="humidity">0</span>%</li>
+                <li class="measure">
                   Wind: <span id="wind">0</span
                   ><span
                     style="text-transform: lowercase"
@@ -102,7 +102,10 @@
             </div>
           </div>
           <!--Weather Forecast-->
-          <div class="weather-forecast-border" id="forecast-columns">
+          <div
+            class="weather-forecast-border rounded-0 shadow"
+            id="forecast-columns"
+          >
             <!--Row containing six columns-->
           </div>
         </div>

@@ -141,7 +141,7 @@ function displayForecast(response) {
   //console.log(response.data);
   let dailyForecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-columns");
-  let forecastHTML = `<div class="row" style="border: solid">`;
+  let forecastHTML = `<div class="row">`;
 
   /*let iconHTML = `<img
                   src="http://openweathermap.org/img/wn/${newIcon}@2x.png"
@@ -158,7 +158,7 @@ function displayForecast(response) {
         forecastHTML +
         `    
               <!--Column for future date, icon, maximum temperature, and minimum temperature-->
-              <div class="col-2" style="border: solid">
+              <div class="col-2 forecastDay">
                 <div class="weather-forecast-date">${formatDay(
                   forecastDay.dt
                 )}</div>
@@ -166,10 +166,12 @@ function displayForecast(response) {
                   src="src/images/${newIcon}.svg"
                   alt=""
                   width="20"
+                  class="forecast-IconColor"
+                  
                 />
                 <div class="weather-forecast-temp">
                   <span class="weather-forecast-temp">${maxi}°</span>
-                  <span class="weather-forecast-temp">${mini}°</span>
+                  <span class="weather-forecast-temp weather-forecast-temp-min">${mini}°</span>
                 </div>
               </div>`;
     }
