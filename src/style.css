@@ -12,6 +12,7 @@ h1 {
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
+  font-style: italic;
 }
 ul {
   margin: 0;
@@ -114,14 +115,14 @@ form {
 
 .weather-time-phase-temp strong {
   color: #939aa9;
-  font-size: 60px;
+  font-size: 150px; /* Change from 60px*/
   font-weight: 400;
   line-height: 60px;
 }
 
 .weather-time-phase-temp .unit {
   position: relative;
-  font-size: 12px;
+  font-size: 20px; /*Changed from 12px*/
   top: -4px;
 }
 
@@ -140,6 +141,66 @@ a#cels-link {
 .weather-time-phase-temp .active:hover {
   text-decoration: none;
 }
+
+/*Just for Testing---------------------------------------------------*/
+.firstRow {
+  margin: 0px 0px 30px 30px;
+}
+
+#date {
+  border: 4px dotted #f9cccc;
+  padding: 5px 20px;
+  width: 120px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.measure {
+  font-size: 14px;
+  font-weight: bold; /*added*/
+  width: 100px;
+  margin-left: 20px;
+}
+
+.weather-icon {
+  margin-right: 1px;
+  width: 60px;
+  height: 60px;
+  filter: invert(15%) sepia(97%) saturate(6984%) hue-rotate(3deg)
+    brightness(85%) contrast(115%);
+}
+.secondRow {
+  text-align: center;
+  margin: 10px;
+}
+
+.secondRow h1 {
+  font-size: 36px;
+}
+
+.secondRow #last {
+  color: #939aa9;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.secondRow #time {
+  font-size: 24px;
+}
+
+#temperature {
+  padding: 30px 5px 30px 30px;
+  margin: 20px 5px 30px 0px;
+}
+
+#description {
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 95px;
+}
+
+/*------------------------------------------------------------------------------*/
 
 /*Weather Forecast*/
 .weather-forecast-border {

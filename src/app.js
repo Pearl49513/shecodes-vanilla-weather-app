@@ -54,11 +54,12 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let timeElement = document.querySelector("#time");
   let weatherIconElement = document.querySelector("#weather-icon");
+  let weatherImageElement = document.querySelector("#current-Weather-Image");
 
   coords = response.data.coord;
   //celsTemp = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = response.data.name.toUpperCase();
   descriptionElement.innerHTML = response.data.weather[0].main;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -67,8 +68,12 @@ function displayTemperature(response) {
 
   //Changing Icons
   let newIcon = response.data.weather[0].icon;
-  weatherIconElement.setAttribute("src", `src/images/${newIcon}.svg`);
+  weatherIconElement.setAttribute("src", `src/icons/${newIcon}.svg`);
   weatherIconElement.setAttribute("alt", response.data.weather[0].main);
+
+  //Changing Images
+  let newImage = response.data.weather[0].main;
+  weatherImageElement.setAttribute("src", `src/images/${newImage}.png`);
 
   getForecast(response.data.coord);
   //console.log(response.data.dt);
@@ -163,7 +168,7 @@ function displayForecast(response) {
                   forecastDay.dt
                 )}</div>
                 <img
-                  src="src/images/${newIcon}.svg"
+                  src="src/icons/${newIcon}.svg"
                   alt=""
                   width="20"
                   class="forecast-IconColor"

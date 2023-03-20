@@ -11,10 +11,6 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/a36de82bc6.js"
-      crossorigin="anonymous"
-    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>-->
     <link rel="stylesheet" href="src/style.css" />
@@ -59,11 +55,14 @@
           <!--Contains the City, Date, Time, And Weather-->
           <div class="city-time-desc-overview">
             <!--Contains the City, Date, Time, and Weather Description-->
-            <h1 id="city">City Name</h1>
+            <!--<h1 id="city">City Name</h1>--><!--TESTING-->
             <ul>
               <!--<li id="date">Weekdate</li>-->
-              <li><span id="date">Date</span><span id="time"> Time</span></li>
-              <li id="description">Weather Description</li>
+              <li>
+                <!--<span id="date">Date</span>--><!--TESTING-->
+                <!--<span id="time"> Time</span>--><!--TESTING-->
+              </li>
+              <!--<li id="description">Weather Description</li>--><!--TESTING-->
             </ul>
           </div>
           <!--Contain two columns-->
@@ -71,24 +70,60 @@
             <div class="col-6">
               <!--Column for icon, temp, and unit-->
               <div class="d-flex weather-time-phase-temp">
-                <!--Weather Image--><img
+                <!--Weather Image--><!--<img
                   src=""
                   alt="Weather Description"
                   id="weather-icon"
-                />
+                />--><!--TESTING-->
                 <!--Temperature--><strong id="temperature">0</strong>
-                <!--Units--><span class="unit"
-                  ><a href="#" id="cels-link" class="active">℃</a> |
-                  <a href="#" id="fahr-link">℉</a></span
-                >
+                <div class="row">
+                  <!--Added-->
+                  <!--Units--><span class="unit"
+                    ><a href="#" id="cels-link" class="active">℃</a> |
+                    <a href="#" id="fahr-link">℉</a></span
+                  >
+                </div>
+
+                <!--Wind-->
+              </div>
+              <div class="firstRow">
+                <ul>
+                  <li><div id="date">Date</div></li>
+                  <!--Date-->
+                  <li>
+                    <div class="measure"
+                      >Humidity: <span id="humidity">0</span>%</div
+                    >
+                    <!--Humidity-->
+                    <div class="measure">
+                      Wind: <span id="wind">0</span
+                      ><span
+                        style="text-transform: lowercase"
+                        id="wind-unit"
+                        class="wind-unit"
+                      >
+                        km/h</div
+                      >
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="col-6">
               <!--Column for Precipitation, Humidity, and Wind -->
               <ul>
+                <li><img
+                src=""
+                alt="Weather Image"
+                class="current-Weather-Image"
+                id="current-Weather-Image"
+                width="250"
+              /></li>
+                <li id="description">Weather Description</li>
+                <!--Weather Description-->
                 <!--<li>Precipitation: <span id="precipitation">0</span>%</li>-->
-                <li class="measure">Humidity: <span id="humidity">0</span>%</li>
-                <li class="measure">
+                <!--<li class="measure">Humidity: <span id="humidity">0</span>%</li>--><!--TESTING-->
+                <!--<li class="measure">
                   Wind: <span id="wind">0</span
                   ><span
                     style="text-transform: lowercase"
@@ -97,10 +132,39 @@
                   >
                     km/h</span
                   >
-                </li>
+                </li>--><!--Testing-->
               </ul>
             </div>
           </div>
+          <div class="row secondRow">
+            <div class="col-12">
+              <h1 id="city">City Name</h1>
+              <!--City Name-->
+            </div>
+          </div>
+          <div class="row secondRow">
+            <div class="col-12">
+              <span id="last"> Last Updated:</span>
+              <!--Time-->
+            </div>
+          </div>
+          <div class="row secondRow">
+            <div class="col-12">
+              <span id="time"> Time</span>
+              <!--Time-->
+            </div>
+          </div>
+          <div class="row secondRow">
+            <div class="col-12">
+              <img
+                src=""
+                alt="Weather Description"
+                class="weather-icon"
+                id="weather-icon"
+              /><!--Main Weather-->
+            </div>
+          </div>
+
           <!--Weather Forecast-->
           <div
             class="weather-forecast-border rounded-0 shadow"
