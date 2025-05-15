@@ -14,9 +14,24 @@ h1 {
   line-height: 28px;
   font-style: italic;
 }
-ul {
-  margin: 0;
+ul.week {
+  margin: auto;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 4px 8px;
+}
+
+ul.image {
+  margin: auto;
+  padding: 19px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 6px 80px;
 }
 
 li {
@@ -197,7 +212,9 @@ a#cels-link {
 #description {
   font-weight: bold;
   font-size: 25px;
-  margin-left: 95px;
+  /*margin-left: 95px;*/
+  margin-top: 10px;
+  text-align: center;
 }
 
 /*------------------------------------------------------------------------------*/
